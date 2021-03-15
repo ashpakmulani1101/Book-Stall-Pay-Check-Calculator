@@ -1,0 +1,180 @@
+
+<html>
+<head>
+<style>
+fieldset{background-color:gold;}
+legend{background-color:white;}
+#no_input
+{
+height:20px;
+}
+#field
+{
+background-color:silver;
+width:500px;
+}
+</style>
+<script type="text/javascript">
+function apk()
+{
+     var rem,reverse,no,fact,i,sum=0,r,temp,m,arm=0,digit,no1;
+     no=(document.getElementById("no_input").value);
+     if(no%2==0)
+{
+  document.getElementById('oddeven').innerHTML="<b> 1. Even number";
+}
+else
+{
+  document.getElementById('oddeven').innerHTML="<b> 1. Odd number";
+}
+if(no>0)
+{
+  document.getElementById('posneg').innerHTML="<b> 2.  Entered number is positive number";
+}
+else
+{
+    //Negatin alert.
+  document.getElementById('posneg').innerHTML="<b> 2.  Entered number is negative number";
+}
+no=parseInt(document.getElementById("no_input").value);
+fact=1;
+for(i=1;i<=no;i++)
+{
+fact=fact*i;
+}
+    document.getElementById("fact").value=fact;
+    no=(document.getElementById("no_input").value);
+    temp=no;
+    while(no)
+    {
+    fact=1,i=1;
+    r=no%10;
+while(i<=r)
+{
+    fact=fact*i;
+    i++;
+}
+   sum=sum+fact;
+   no=parseInt(no/10);
+}
+if(sum==temp)
+{
+    document.getElementById('strong').innerHTML="<b> 3.  Entered number is strong number"; 
+}
+else
+{
+    document.getElementById('strong').innerHTML="<b> 3. Entered number is not strong Number";
+}
+no=(document.getElementById("no_input").value);
+temp=0;
+m=0;
+m=no/2;    
+for(i=2;i<=m;i++)    
+{    
+if(no%i==0)    
+{    
+document.getElementById('prime').innerHTML="<b> 4.  Entered number is not Prime Number";
+temp=1;    
+break;    
+}    
+}    
+if(temp==0) 
+{   
+document.getElementById('prime').innerHTML="<b> 4.  Entered number is Prime Number";
+}
+temp=0;
+no=parseInt(document.getElementById("no_input").value);
+temp=no;
+reverse=0;
+while(temp)
+{
+rem=temp%10;
+temp=parseInt(temp/10);
+reverse=reverse*10+rem;
+}
+if(no==reverse)
+{
+document.getElementById('palindrome').innerHTML="<b> 5.  Entered number is palindrome";
+}
+else
+{
+document.getElementById('palindrome').innerHTML="<b>5.  Entered number is not palindrome";
+}
+
+no=parseInt(document.getElementById("no_input").value);
+no1=no;
+while(no>0)
+{
+digit=(no%10);
+arm=arm+(digit*digit*digit);
+no=parseInt(no/10);
+}
+if(arm==no1)
+{
+document.getElementById('armstrong').innerHTML=" <b> 6. Entered number is armstrong";
+}
+else
+{
+document.getElementById('armstrong').innerHTML="<b> 6. Entered number is not armstrong";
+}
+sum=0,temp=0;
+no=parseInt(document.getElementById("no_input").value);
+while(no>0)
+{
+temp=no%10;
+sum=sum+temp;
+no=parseInt(no/10);
+}
+document.getElementById("sum").value=sum;
+
+
+sum = 0;
+no=parseInt(document.getElementById("no_input").value);
+
+for (i = 1; i <no; i++)
+{
+if(no%i==0)
+{
+sum = sum + i;
+}
+}
+if (no==sum)
+{
+document.getElementById('perfect').innerHTML="<b> 7. </> Perfect number";
+}
+else
+{
+document.getElementById('perfect').innerHTML="<b> 7. </> Not Perfect number";
+}
+}
+</script>
+</head>
+<body>
+
+<fieldset>
+<legend>Web Technology</legend>
+<center>
+<h1> <u>APK-Programming</u></h1>
+<h4> Javascript programme to check the all properties of number</h4>
+</hr>
+<hr color=green><br></br>
+Enter Number : <input id="no_input">  
+<button onclick="apk()">Check</button><br></br>
+<fieldset id="field">
+<div class="demo">
+<div id='oddeven'></div><br>
+<div id='posneg'></div><br>
+<div id='strong'></div><br>
+<div id='prime'></div><br>
+<div id='palindrome'></div><br>
+<div id='armstrong'></div><br>
+<div id='perfect'></div>
+</br>
+<b>Factorial of no :<input id="fact"><br></br>
+<b>Sum of Digits :<input id="sum"></i><br></br>
+<br></br>
+</fieldset>
+</fieldset>
+
+</body>
+</html>
